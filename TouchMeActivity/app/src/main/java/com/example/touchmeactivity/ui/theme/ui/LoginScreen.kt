@@ -60,7 +60,7 @@ fun LoginButton() {
     Button(onClick = { },
         modifier = Modifier.fillMaxWidth().height(48.dp),
         colors = ButtonDefaults.buttonColors(
-            containerColor = Color(0xFF0069BB),
+            containerColor = Color(0xFF2F75BC),
             contentColor = Color.White
         )
     ) {
@@ -76,7 +76,7 @@ fun Register(modifier: Modifier) {
         fontSize = 12.sp,
         fontWeight = FontWeight.Bold,
         textDecoration = TextDecoration.Underline,
-        color = Color(0xFF0069BB)
+        color = Color(0xFF2F75BC)
     )
 }
 
