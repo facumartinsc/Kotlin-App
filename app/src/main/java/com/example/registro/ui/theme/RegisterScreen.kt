@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -20,6 +21,9 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.runtime.Composable
 import com.example.registro.R
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.VisibilityOff
 
 
 @Composable
@@ -79,6 +83,8 @@ fun RegisterScreen(viewModel: RegisterViewModel) {
 
             Spacer(Modifier.height(8.dp))
 
+            var passwordVisible by remember { mutableStateOf(false) }
+
             TextField(
                 value = uiState.password,
                 onValueChange = viewModel::onPasswordChange,
@@ -89,15 +95,21 @@ fun RegisterScreen(viewModel: RegisterViewModel) {
                 singleLine = true,
                 maxLines = 1,
                 colors = TextFieldDefaults.colors(
-//                    focusedContainerColor = Color(0xFF919193),
-//                    unfocusedContainerColor = Color(0xFF919193),
                     focusedIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent,
                     cursorColor = Color.White
                 ),
-                visualTransformation = PasswordVisualTransformation()
+                visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
+                trailingIcon = {
+                    val icon = if (passwordVisible) Icons.Filled.Visibility else Icons.Filled.VisibilityOff
+                    IconButton(onClick = { passwordVisible = !passwordVisible }) {
+                        Icon(imageVector = icon, contentDescription = "Mostrar/ocultar contraseña")
+                    }
+                }
             )
             Spacer(Modifier.height(8.dp))
+
+            var confirpasswordVisible by remember { mutableStateOf(false) }
 
             TextField(
                 value = uiState.confirmPassword,
@@ -115,9 +127,15 @@ fun RegisterScreen(viewModel: RegisterViewModel) {
                     unfocusedIndicatorColor = Color.Transparent,
                     cursorColor = Color.White
                 ),
-                visualTransformation = PasswordVisualTransformation()
+                visualTransformation = if (confirpasswordVisible) VisualTransformation.None else PasswordVisualTransformation(),
+                trailingIcon = {
+                    val icon = if (confirpasswordVisible) Icons.Filled.Visibility else Icons.Filled.VisibilityOff
+                    IconButton(onClick = { confirpasswordVisible = !confirpasswordVisible }) {
+                        Icon(imageVector = icon, contentDescription = "Mostrar/ocultar contraseña")
+                    }
+                }
             )
-            Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(8.dp))
 
             Button(
                 onClick = { viewModel.register() },
