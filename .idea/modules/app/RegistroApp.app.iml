@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module version="4">
+<module external.linked.project.id=":app" external.linked.project.path="$MODULE_DIR$/../../../app" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="RegistroApp" external.system.module.version="unspecified" version="4">
   <component name="ModuleClassLoaderOverlays">
     <paths>
       <option value="/var/folders/8v/cm8xrnlj2g54xc8hn0mc7m_h0000gp/T/overlay6449961892526753525" />
     </paths>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
+    <exclude-output />
+    <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
