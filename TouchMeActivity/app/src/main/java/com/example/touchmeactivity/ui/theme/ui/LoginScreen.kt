@@ -45,19 +45,22 @@ import com.example.touchmeactivity.ui.viewmodel.LoginViewModel
 
 
 @Composable
-fun LoginScreen(modifier: Modifier = Modifier) {
+fun LoginScreen(
+    modifier: Modifier = Modifier,
+    onRegisterClick: () -> Unit
+) {
     val viewModel: LoginViewModel = viewModel()
 
     Box(
         modifier
             .fillMaxSize()
             .padding(16.dp)) {
-        Login(Modifier.align(Alignment.Center), viewModel)
+        Login(Modifier.align(Alignment.Center), viewModel = viewModel, onRegisterClick = onRegisterClick)
     }
 }
 
 @Composable
-fun Login(modifier: Modifier, viewModel: LoginViewModel) {
+fun Login(modifier: Modifier, viewModel: LoginViewModel, onRegisterClick: () -> Unit) {
     val errorMessage by viewModel.errorMessage.observeAsState()
 
     Column(modifier = modifier) {
@@ -67,9 +70,14 @@ fun Login(modifier: Modifier, viewModel: LoginViewModel) {
         Spacer(modifier = Modifier.padding(4.dp))
         PasswordField(viewModel)
         Spacer(modifier = Modifier.padding(8.dp))
-        Register(Modifier.align(Alignment.CenterHorizontally))
+        //Register(Modifier.align(Alignment.CenterHorizontally))
         Spacer(modifier = Modifier.padding(8.dp))
         LoginButton { viewModel.onLoginClicked() }
+
+        Register(
+            modifier = Modifier.align(Alignment.CenterHorizontally),
+            onClick = onRegisterClick
+        )
 
         errorMessage?.let {
             Text(
@@ -99,10 +107,10 @@ fun LoginButton(onClick: () -> Unit) {
 }
 
 @Composable
-fun Register(modifier: Modifier) {
+fun Register(modifier: Modifier, onClick: () -> Unit) {
     Text(
         text = "¿No tienes una cuenta?",
-        modifier = modifier.clickable {  },
+        modifier = modifier.clickable { onClick() },
         fontSize = 12.sp,
         fontWeight = FontWeight.Bold,
         textDecoration = TextDecoration.Underline,
@@ -175,5 +183,5 @@ fun HeaderImage(modifier: Modifier) {
 @Preview
 @Composable
 fun SimpleComposablePreview() {
-    LoginScreen()
+    LoginScreen(onRegisterClick = {})
 }
