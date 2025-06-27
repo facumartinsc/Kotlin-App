@@ -304,6 +304,30 @@ fun RegisterScreenPreviewContent(
             Text(if (uiState.isLoading) "Registrando..." else "Registrarse")
         }
 
+        if (uiState.isLoading) {
+            Spacer(Modifier.height(16.dp))
+            CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
+        }
+
+        uiState.error?.let { errorMessage ->
+            Text(
+                text = errorMessage,
+                color = Color.Red,
+                style = typography.bodyMedium,
+                modifier = Modifier.padding(8.dp)
+            )
+        }
+
+        uiState.successMessage?.let { successMessage ->
+            Text(
+                text = successMessage,
+                color = Color.Green,
+                style = typography.bodyMedium,
+                modifier = Modifier.padding(8.dp)
+            )
+        }
+
+
         uiState.error?.let {
             Spacer(Modifier.height(8.dp))
             Text(text = it, color = colorScheme.error)
