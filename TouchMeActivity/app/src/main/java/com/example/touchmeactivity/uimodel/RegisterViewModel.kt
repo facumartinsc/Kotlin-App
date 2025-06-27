@@ -1,10 +1,8 @@
-package com.example.touchmeactivity.registro.viewmodel
-
+package com.example.touchmeactivity.uimodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.touchmeactivity.registro.repository.AuthRepository
-import com.example.touchmeactivity.registro.uimodel.RegisterUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update

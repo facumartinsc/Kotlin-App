@@ -1,4 +1,4 @@
-package com.example.touchmeactivity.ui.login
+package com.example.touchmeactivity.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

@@ -13,7 +13,7 @@ import androidx.compose.runtime.Composable
 //import com.example.homeapp.ui.theme.HomeScreen
 import com.example.homeapp.screens.Game1Screen
 import com.example.homeapp.screens.Game2Screen
-import com.example.touchmeactivity.home.homeapp.ui.theme.HomeScreen
+import com.example.touchmeactivity.screens.HomeScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.example.touchmeactivity.home.homeapp.ui.theme
+package com.example.touchmeactivity.screens
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.Image
@@ -18,7 +18,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.touchmeactivity.R
-import com.example.touchmeactivity.ui.login.ui.LoginButton
 
 @Composable
 fun HomeScreen(navController: NavController) {

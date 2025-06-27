@@ -1,7 +1,7 @@
 package com.example.touchmeactivity.data.api
 
-import com.example.touchmeactivity.ui.login.domain.model.LoginRequest
-import com.example.touchmeactivity.ui.login.domain.model.LoginResponse
+import com.example.touchmeactivity.data.model.LoginRequest
+import com.example.touchmeactivity.data.model.LoginResponse
 import retrofit2.http.Body
 import retrofit2.http.Headers
 import retrofit2.http.POST

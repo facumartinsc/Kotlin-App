@@ -1,4 +1,4 @@
-package com.example.touchmeactivity.ui.login
+package com.example.touchmeactivity.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

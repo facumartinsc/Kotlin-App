@@ -1,4 +1,4 @@
-package com.example.touchmeactivity.registro.uitheme
+package com.example.touchmeactivity.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -23,8 +23,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.touchmeactivity.R
-import com.example.touchmeactivity.registro.uimodel.RegisterUiState
-import com.example.touchmeactivity.registro.viewmodel.RegisterViewModel
+import com.example.touchmeactivity.uimodel.RegisterUiState
+import com.example.touchmeactivity.uimodel.RegisterViewModel
 
 
 @Composable
@@ -41,7 +41,7 @@ fun RegisterScreen(viewModel: RegisterViewModel) {
             modifier = Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            HeaderImage(modifier = Modifier.size(100.dp))
+            HeaderImageRegister(modifier = Modifier.size(100.dp))
 
             Spacer(Modifier.padding(16.dp))
             TextField(
@@ -176,7 +176,7 @@ fun RegisterScreen(viewModel: RegisterViewModel) {
 // imagen
 
 @Composable
-fun HeaderImage(modifier: Modifier) {
+fun HeaderImageRegister(modifier: Modifier) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxWidth()
@@ -192,11 +192,6 @@ fun HeaderImage(modifier: Modifier) {
         )
     }
 }
-
-
-
-
-
 
 // codigo preview
 
@@ -359,7 +354,7 @@ fun RegisterScreenPreview() {
             modifier = Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            HeaderImage(modifier = Modifier.size(100.dp))
+            HeaderImageRegister(modifier = Modifier.size(100.dp))
 
             Spacer(Modifier.height(16.dp))
 

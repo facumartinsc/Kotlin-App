@@ -1,4 +1,4 @@
-package com.example.touchmeactivity.ui.viewmodel
+package com.example.touchmeactivity.uimodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.touchmeactivity.data.remote.RetrofitInstance
-import com.example.touchmeactivity.ui.login.domain.model.LoginRequest
+import com.example.touchmeactivity.data.model.LoginRequest
 import kotlinx.coroutines.launch
 
 class LoginViewModel : ViewModel() {
@@ -59,5 +59,3 @@ class LoginViewModel : ViewModel() {
         }
     }
 }
-
-

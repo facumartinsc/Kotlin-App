@@ -1,4 +1,4 @@
-package com.example.touchmeactivity.registro.uimodel
+package com.example.touchmeactivity.uimodel
 
 data class RegisterUiState(
     val username: String = "",

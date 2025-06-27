@@ -11,10 +11,10 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import com.example.touchmeactivity.data.api.SupabaseAuthApi
 import com.example.touchmeactivity.registro.repository.AuthRepository
-import com.example.touchmeactivity.registro.uitheme.RegisterScreen
-import com.example.touchmeactivity.registro.viewmodel.RegisterViewModel
-import com.example.touchmeactivity.ui.login.TouchMeActivityTheme
-import com.example.touchmeactivity.ui.login.ui.LoginScreen
+import com.example.touchmeactivity.screens.RegisterScreen
+import com.example.touchmeactivity.uimodel.RegisterViewModel
+import com.example.touchmeactivity.ui.theme.TouchMeActivityTheme
+import com.example.touchmeactivity.screens.LoginScreen
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

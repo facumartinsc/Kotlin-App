@@ -1,4 +1,4 @@
-package com.example.touchmeactivity.ui.login.domain.model
+package com.example.touchmeactivity.data.model
 
 data class LoginRequest(
     val email: String,
