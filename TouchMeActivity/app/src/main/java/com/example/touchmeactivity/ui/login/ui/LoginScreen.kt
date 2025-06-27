@@ -1,4 +1,4 @@
-package com.example.touchmeactivity.ui.theme.ui
+package com.example.touchmeactivity.ui.login.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -40,6 +40,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.example.touchmeactivity.R
 import com.example.touchmeactivity.ui.viewmodel.LoginViewModel
 
@@ -47,20 +48,33 @@ import com.example.touchmeactivity.ui.viewmodel.LoginViewModel
 @Composable
 fun LoginScreen(
     modifier: Modifier = Modifier,
-    onRegisterClick: () -> Unit
+    onRegisterClick: () -> Unit,
+    onLoginSuccess: () -> Unit
 ) {
+
     val viewModel: LoginViewModel = viewModel()
 
     Box(
         modifier
             .fillMaxSize()
             .padding(16.dp)) {
-        Login(Modifier.align(Alignment.Center), viewModel = viewModel, onRegisterClick = onRegisterClick)
+        Login(
+            modifier = Modifier.align(Alignment.Center),
+            viewModel = viewModel,
+            onRegisterClick = onRegisterClick,
+            onLoginSuccess = onLoginSuccess
+        )
     }
 }
 
+
 @Composable
-fun Login(modifier: Modifier, viewModel: LoginViewModel, onRegisterClick: () -> Unit) {
+fun Login(
+    modifier: Modifier,
+    viewModel: LoginViewModel,
+    onRegisterClick: () -> Unit,
+    onLoginSuccess: () -> Unit
+) {
     val errorMessage by viewModel.errorMessage.observeAsState()
 
     Column(modifier = modifier) {
@@ -72,10 +86,16 @@ fun Login(modifier: Modifier, viewModel: LoginViewModel, onRegisterClick: () -> 
         Spacer(modifier = Modifier.padding(8.dp))
         //Register(Modifier.align(Alignment.CenterHorizontally))
         Spacer(modifier = Modifier.padding(8.dp))
-        LoginButton { viewModel.onLoginClicked() }
+//        LoginButton { viewModel.onLoginClicked() }
+        LoginButton {
+            viewModel.onLoginClicked()
+//            onLoginSuccess()
+        }
 
         Register(
-            modifier = Modifier.align(Alignment.CenterHorizontally),
+            modifier = Modifier
+                .align(Alignment.CenterHorizontally)
+                .padding(top = 15.dp),
             onClick = onRegisterClick
         )
 
@@ -96,7 +116,9 @@ fun Login(modifier: Modifier, viewModel: LoginViewModel, onRegisterClick: () -> 
 fun LoginButton(onClick: () -> Unit) {
     Button(
         onClick = onClick,
-        modifier = Modifier.fillMaxWidth().height(48.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(48.dp),
         colors = ButtonDefaults.buttonColors(
             containerColor = Color(0xFF2F75BC),
             contentColor = Color.White
@@ -105,6 +127,7 @@ fun LoginButton(onClick: () -> Unit) {
         Text(text = "Iniciar sesión")
     }
 }
+
 
 @Composable
 fun Register(modifier: Modifier, onClick: () -> Unit) {
@@ -118,6 +141,7 @@ fun Register(modifier: Modifier, onClick: () -> Unit) {
     )
 }
 
+
 @Composable
 fun PasswordField(viewModel: LoginViewModel) {
     val password by viewModel.password.observeAsState("")
@@ -125,9 +149,10 @@ fun PasswordField(viewModel: LoginViewModel) {
     TextField(
         value = password, onValueChange = { viewModel.onPasswordChanged(it)},
         modifier = Modifier.fillMaxWidth(),
-        placeholder = { Text(text = "Contraseña") },
+//        placeholder = { Text(text = "Contraseña") },
         shape = RoundedCornerShape(30.dp),
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+        label = { Text("Contraseña") },
         visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
         trailingIcon = {
             val icon = if (passwordVisible) Icons.Default.Visibility else Icons.Default.VisibilityOff
@@ -155,9 +180,10 @@ fun EmailField(viewModel: LoginViewModel) {
     TextField(
         value = email, onValueChange = {viewModel.onEmailChanged(it)},
         modifier = Modifier.fillMaxWidth(),
-        placeholder = { Text(text = "Email") },
+//        placeholder = { Text(text = "Email") },
         shape = RoundedCornerShape(30.dp),
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
+        label = { Text("Email") },
         singleLine = true,
         maxLines = 1,
         colors = TextFieldDefaults.colors(
@@ -165,7 +191,7 @@ fun EmailField(viewModel: LoginViewModel) {
             //unfocusedContainerColor = Color(0xFFFFFFFF),
             focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent,
-            cursorColor = Color.White
+            cursorColor = Color.White,
         )
     )
 }
@@ -183,5 +209,8 @@ fun HeaderImage(modifier: Modifier) {
 @Preview
 @Composable
 fun SimpleComposablePreview() {
-    LoginScreen(onRegisterClick = {})
+    LoginScreen(
+        onRegisterClick = {},
+        onLoginSuccess = {}
+    )
 }

@@ -43,7 +43,7 @@ fun RegisterScreen(viewModel: RegisterViewModel) {
         ) {
             HeaderImage(modifier = Modifier.size(100.dp))
 
-            Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.padding(16.dp))
             TextField(
                 value = uiState.username,
                 onValueChange = viewModel::onUsernameChange,
@@ -62,7 +62,7 @@ fun RegisterScreen(viewModel: RegisterViewModel) {
                 )
             )
 
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.padding(8.dp))
 
             TextField(
                 value = uiState.email,
@@ -82,7 +82,7 @@ fun RegisterScreen(viewModel: RegisterViewModel) {
                 )
             )
 
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.padding(8.dp))
 
             var passwordVisible by remember { mutableStateOf(false) }
 
@@ -108,7 +108,7 @@ fun RegisterScreen(viewModel: RegisterViewModel) {
                     }
                 }
             )
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.padding(8.dp))
 
             var confirpasswordVisible by remember { mutableStateOf(false) }
 
@@ -136,7 +136,7 @@ fun RegisterScreen(viewModel: RegisterViewModel) {
                     }
                 }
             )
-            Spacer(Modifier.height(8.dp))
+            Spacer(Modifier.padding(8.dp))
 
             Button(
                 onClick = { viewModel.register() },
@@ -159,11 +159,11 @@ fun RegisterScreen(viewModel: RegisterViewModel) {
                     style = typography.bodyMedium.copy(fontWeight = FontWeight.Bold)
                 )
             }
-            uiState.successMessage?.let {
+            uiState.successMessage?.let {// mensaje de registro exitoso
                 Spacer(Modifier.height(8.dp))
                 Text(
                     text = it,
-                    color = Color(0xFF4CAF50), // verde para éxito
+                    color = Color(0xFF4CAF50),
                     style = typography.bodyMedium.copy(fontWeight = FontWeight.Bold)
                 )
             }
@@ -303,6 +303,30 @@ fun RegisterScreenPreviewContent(
         ) {
             Text(if (uiState.isLoading) "Registrando..." else "Registrarse")
         }
+
+        if (uiState.isLoading) {
+            Spacer(Modifier.height(16.dp))
+            CircularProgressIndicator(modifier = Modifier.align(Alignment.CenterHorizontally))
+        }
+
+        uiState.error?.let { errorMessage ->
+            Text(
+                text = errorMessage,
+                color = Color.Red,
+                style = typography.bodyMedium,
+                modifier = Modifier.padding(8.dp)
+            )
+        }
+
+        uiState.successMessage?.let { successMessage ->
+            Text(
+                text = successMessage,
+                color = Color.Green,
+                style = typography.bodyMedium,
+                modifier = Modifier.padding(8.dp)
+            )
+        }
+
 
         uiState.error?.let {
             Spacer(Modifier.height(8.dp))

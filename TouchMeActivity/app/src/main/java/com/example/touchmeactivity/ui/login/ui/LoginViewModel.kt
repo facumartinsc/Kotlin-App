@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.touchmeactivity.data.remote.RetrofitInstance
-import com.example.touchmeactivity.ui.theme.domain.model.LoginRequest
+import com.example.touchmeactivity.ui.login.domain.model.LoginRequest
 import kotlinx.coroutines.launch
 
 class LoginViewModel : ViewModel() {

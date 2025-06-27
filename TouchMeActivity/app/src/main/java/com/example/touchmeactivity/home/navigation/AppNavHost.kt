@@ -1,0 +1,42 @@
+package com.example.homeapp.screens
+
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+//import androidx.navigation.NavHostController
+//import androidx.navigation.compose.NavHost
+//import androidx.navigation.compose.composable
+//import com.example.touchmeactivity.home.homeapp.ui.theme.HomeScreen
+//import com.example.touchmeactivity.registro.uitheme.RegisterScreen
+//import com.example.touchmeactivity.registro.viewmodel.RegisterViewModel
+//import com.example.touchmeactivity.ui.login.ui.LoginScreen
+//import screens.Game1Screen
+//import screens.Game2Screen
+
+//
+@Composable
+fun Game1Screen() {
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(text = "Poker", style = MaterialTheme.typography.headlineLarge)
+    }
+}
+
+@Composable
+fun Game2Screen() {
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(text = "Tócame", style = MaterialTheme.typography.headlineLarge)
+    }
+}
+
+
+

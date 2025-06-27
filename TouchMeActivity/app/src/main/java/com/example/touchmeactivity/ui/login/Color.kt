@@ -1,4 +1,4 @@
-package com.example.touchmeactivity.ui.theme
+package com.example.touchmeactivity.ui.login
 
 import androidx.compose.ui.graphics.Color
 

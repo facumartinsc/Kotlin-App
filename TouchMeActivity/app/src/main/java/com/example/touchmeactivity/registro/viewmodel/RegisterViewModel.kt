@@ -79,7 +79,8 @@ class RegisterViewModel(private val repository: AuthRepository) : ViewModel() {
                     it.copy(
                         isLoading = false,
                         error = null,
-                        successMessage = "Registro exitoso"
+                        successMessage = "Registro exitoso",
+                        accessToken = result.getOrNull()?.access_token
                     )
                 } else {
                     it.copy(

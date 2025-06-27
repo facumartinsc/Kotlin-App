@@ -62,6 +62,22 @@ implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 implementation("androidx.compose.material:material-icons-extended")
     implementation("androidx.compose.runtime:runtime-livedata")
 
+    implementation(platform("androidx.compose:compose-bom:2023.06.01"))
+
+    // Compose Foundation (incluye HorizontalPager)
+    implementation("androidx.compose.foundation:foundation")
+
+    // Material 3
+    implementation("androidx.compose.material3:material3")
+
+    // Navigation Compose
+    implementation("androidx.navigation:navigation-compose:2.7.5")
+
+    // Activity Compose
+    implementation("androidx.activity:activity-compose:1.7.2")
+
+    //
+//    implementation("androidx.navigation:navigation-compose:2.7.7") // o versión actual
 
     testImplementation(libs.junit)
 androidTestImplementation(libs.androidx.junit)

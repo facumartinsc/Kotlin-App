@@ -5,10 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fbe3864-e2cf-4f3c-8b52-4560e8ff07fe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TouchMeActivity/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TouchMeActivity/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TouchMeActivity/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/TouchMeActivity/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/theme/ui/LoginScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/theme/ui/LoginScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/registro/network/MockAuthApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/registro/network/MockAuthApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/registro/repository/AuthRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/registro/repository/AuthRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/registro/uimodel/RegisterUIState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/registro/uimodel/RegisterUIState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/registro/uitheme/RegisterScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/registro/uitheme/RegisterScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/registro/viewmodel/RegisterViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/registro/viewmodel/RegisterViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/theme/Color.kt" beforeDir="false" afterPath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/login/Color.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/theme/Theme.kt" beforeDir="false" afterPath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/login/Theme.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/theme/Type.kt" beforeDir="false" afterPath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/login/Type.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/theme/data/api/SupabaseAuthApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/login/data/api/SupabaseAuthApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/theme/data/remote/RetrofitInstance.kt" beforeDir="false" afterPath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/login/data/remote/RetrofitInstance.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/theme/domain/model/LoginRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/login/domain/model/LoginRequest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/theme/domain/model/LoginResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/login/domain/model/LoginResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/theme/ui/LoginScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/login/ui/LoginScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/theme/ui/LoginViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/TouchMeActivity/app/src/main/java/com/example/touchmeactivity/ui/login/ui/LoginViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +35,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="_Designer_Tab" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -29,19 +46,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/Facu&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/bootcamp/Documents/bootcampFM/Kotlin-App&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "git-widget-placeholder": "FacuEstable",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/bootcamp/Kotlin-App copy",
+    "run.code.analysis.last.selected.profile": "pProject Default"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
