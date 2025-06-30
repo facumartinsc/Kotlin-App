@@ -11,8 +11,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.compose.runtime.Composable
 //import com.example.homeapp.ui.theme.HomeScreen
-import com.example.homeapp.screens.Game1Screen
-import com.example.homeapp.screens.Game2Screen
+//import com.example.homeapp.screens.Game1Screen
+//import com.example.homeapp.screens.Game2Screen
 import com.example.touchmeactivity.screens.HomeScreen
 
 class MainActivity : ComponentActivity() {
@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
 fun AppNavHost(navController: NavHostController) {
     NavHost(navController = navController, startDestination = "home") {
         composable("home") { HomeScreen(navController) }
-        composable("game1") { Game1Screen() }
-        composable("game2") { Game2Screen() }
+//        composable("game1") { Game1Screen() }
+//        composable("game2") { Game2Screen() }
     }
 }

@@ -88,3 +88,49 @@ androidTestImplementation(libs.androidx.ui.test.junit4)
 debugImplementation(libs.androidx.ui.tooling)
 debugImplementation(libs.androidx.ui.test.manifest)
 }
+
+//dependencies {
+//    // Core AndroidX
+//    implementation(libs.androidx.core.ktx)
+//
+//    // Lifecycle
+//    implementation(libs.androidx.lifecycle.runtime.ktx)
+//    implementation(libs.androidx.lifecycle.livedata.ktx)
+//    implementation(libs.androidx.lifecycle.viewmodel.compose)
+//    implementation(libs.androidx.runtime.livedata)
+//
+//    // Activity Compose
+//    implementation(libs.androidx.activity.compose)
+//
+//    // Compose BOM (solo una vez)
+//    implementation(platform(libs.androidx.compose.bom))
+//
+//    // Compose UI
+//    implementation(libs.androidx.ui)
+//    implementation(libs.androidx.ui.graphics)
+//    implementation(libs.androidx.ui.tooling.preview)
+//
+//    // Compose Material 3 y Foundation
+//    implementation(libs.androidx.material3)
+//    implementation(libs.androidx.foundation.android)
+//
+//    // Otros
+//    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+//    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+//    implementation("androidx.navigation:navigation-compose:2.7.5")
+//
+//    // Coroutines
+//    implementation(libs.kotlinx.coroutines.core)
+//    implementation(libs.kotlinx.coroutines.android)
+//
+//    // Testing
+//    testImplementation(libs.junit)
+//    androidTestImplementation(libs.androidx.junit)
+//    androidTestImplementation(libs.androidx.espresso.core)
+//    androidTestImplementation(platform(libs.androidx.compose.bom))
+//    androidTestImplementation(libs.androidx.ui.test.junit4)
+//
+//    // Debug
+//    debugImplementation(libs.androidx.ui.tooling)
+//    debugImplementation(libs.androidx.ui.test.manifest)
+//}

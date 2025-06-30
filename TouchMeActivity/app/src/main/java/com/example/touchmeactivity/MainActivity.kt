@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import com.example.homeapp.AppNavHost
 import com.example.touchmeactivity.data.api.SupabaseAuthApi
 import com.example.touchmeactivity.registro.repository.AuthRepository
 import com.example.touchmeactivity.screens.RegisterScreen
@@ -17,6 +18,8 @@ import com.example.touchmeactivity.ui.theme.TouchMeActivityTheme
 import com.example.touchmeactivity.screens.LoginScreen
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import androidx.navigation.compose.rememberNavController
+import com.example.homeapp.screens.AppNavHost
 
 class MainActivity : ComponentActivity() {
 
@@ -33,34 +36,21 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TouchMeActivityTheme {
+                val navController = rememberNavController()
                 var isRegister by remember { mutableStateOf(false) }
-                var isLoggedIn by remember { mutableStateOf(false) }
 
-                Scaffold(modifier = Modifier.fillMaxSize()) { padding ->
-                    if (isLoggedIn) {
-                        androidx.compose.material3.Text(
-                            text = "¡Bienvenido!",
-                            modifier = Modifier.padding(padding)
-                        )
-                    } else {
-                        if (isRegister) {
-                            val registerViewModel = remember {
-                                RegisterViewModel(AuthRepository(supabaseAuthApi))
-                            }
-                            RegisterScreen(viewModel = registerViewModel)
-                        } else {
-                            LoginScreen(
-                                modifier = Modifier.padding(padding),
-                                onRegisterClick = { isRegister = true },
-                                onLoginSuccess = {
-                                    isLoggedIn = true
-                                }
-                            )
+                AppNavHost(
+                    navController = navController,
+                    supabaseAuthApi = supabaseAuthApi,
+                    isRegister = isRegister,
+                    onRegisterClick = { isRegister = true },
+                    onLoginSuccess = {
+                        navController.navigate("home") {
+                            popUpTo("login") { inclusive = true } // Evita volver con "back"
                         }
                     }
-                }
+                )
             }
-
         }
     }
 }

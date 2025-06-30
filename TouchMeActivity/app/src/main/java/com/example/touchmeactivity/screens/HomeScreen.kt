@@ -8,7 +8,7 @@ import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.rememberCoroutineScope
+//import androidx.compose.runtime.rememberCoroutineScope/
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
@@ -22,53 +22,49 @@ import com.example.touchmeactivity.R
 @Composable
 fun HomeScreen(navController: NavController) {
     val pagerState = rememberPagerState { 3 }
-    val coroutineScope = rememberCoroutineScope()
+//    val coroutineScope = rememberCoroutineScope()
 
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
-    ) {HorizontalPager(
-        state = pagerState,
-        modifier = Modifier
-            .weight(1f)
-            .fillMaxWidth()
-    ) { page ->
-
-        // Choose image based on page
-        val imageRes = when (page) {
-            0 -> R.drawable.pokir
-            1 -> R.drawable.ball // Replace with your second image
-            else -> R.drawable.pokir
-        }
-        Card(
+    ) {
+        HorizontalPager(
+            state = pagerState,
             modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp),
-            elevation = CardDefaults.cardElevation(8.dp)
-        ) {
-            Box(modifier = Modifier.fillMaxSize()) {
-                Image(
-                    painter = painterResource(id = imageRes),
-                    contentDescription = "Slide image",
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier.fillMaxSize()
-                )
-                Box(
-                    modifier = Modifier.fillMaxSize(),
-                    contentAlignment = Alignment.Center
-                ) {
-//                    Text(
-//                        text = "Juego ${page + 1}",
-//                        style = MaterialTheme.typography.headlineMedium,
-//                        color = MaterialTheme.colorScheme.onPrimary,
-//                        modifier = Modifier.padding(8.dp)
-//                    )
+                .weight(1f)
+                .fillMaxWidth()
+        ) { page ->
+
+//         funciona eliginedo las imagenes dependiendo de en que pagina esta
+            val imageRes = when (page) {
+                0 -> R.drawable.pokir
+                1 -> R.drawable.ball
+                else -> R.drawable.pokir
+            }
+            Card(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                elevation = CardDefaults.cardElevation(8.dp)
+            ) {
+                Box(modifier = Modifier.fillMaxSize()) {
+                    Image(
+                        painter = painterResource(id = imageRes),
+                        contentDescription = "Slide image",
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier.fillMaxSize()
+                    )
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                    }
+
                 }
             }
         }
-    }
 
 
         Spacer(modifier = Modifier.height(290.dp))
@@ -76,6 +72,8 @@ fun HomeScreen(navController: NavController) {
         Row(
             horizontalArrangement = Arrangement.Center,
             modifier = Modifier.fillMaxWidth()
+//            horizontalArrangement = Arrangement.spacedBy(8.dp),
+//            modifier = Modifier.padding(16.dp)
         ) {
             repeat(3) { index ->
                 val selected = pagerState.currentPage == index
@@ -92,15 +90,37 @@ fun HomeScreen(navController: NavController) {
             }
         }
 
-        Spacer(modifier = Modifier.height(0.dp))
+        Spacer(modifier = Modifier.height(100.dp))
 
-        Button(onClick = {
-            when (pagerState.currentPage) {
-                0 -> navController.navigate("game1")
-                1 -> navController.navigate("game2")
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = Modifier.padding(16.dp)
+        ) {
+            Button(onClick = {
+                when (pagerState.currentPage) {
+                    0 -> navController.navigate("game1")
+                    1 -> navController.navigate("game2")
+                }
+            }) {
+                Text("Ayuda")
             }
-        }) {
-            Text("Jugar")
+
+            Button(onClick = {
+                when (pagerState.currentPage) {
+                    0 -> navController.navigate("game1")
+                    1 -> navController.navigate("game2")
+                }
+            }) {
+                Text("Jugar")
+            }
+            Button(onClick = {
+                when (pagerState.currentPage) {
+                    0 -> navController.navigate("game1")
+                    1 -> navController.navigate("game2")
+                }
+            }) {
+                Text("Puntajes")
+            }
         }
     }
 }

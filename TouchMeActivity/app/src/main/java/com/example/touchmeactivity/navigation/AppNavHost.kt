@@ -10,29 +10,40 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.touchmeactivity.data.api.SupabaseAuthApi
+import com.example.touchmeactivity.registro.repository.AuthRepository
 import com.example.touchmeactivity.screens.HomeScreen
 import com.example.touchmeactivity.screens.RegisterScreen
 import com.example.touchmeactivity.uimodel.RegisterViewModel
 import com.example.touchmeactivity.screens.LoginScreen
+import screens.Game1Screen
+import screens.Game2Screen
 
 
 @Composable
-fun Game1Screen() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(text = "Poker", style = MaterialTheme.typography.headlineLarge)
-    }
-}
-
-@Composable
-fun Game2Screen() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(text = "Tócame", style = MaterialTheme.typography.headlineLarge)
+fun AppNavHost(
+    navController: NavHostController,
+    supabaseAuthApi: SupabaseAuthApi,
+    isRegister: Boolean,
+    onRegisterClick: () -> Unit,
+    onLoginSuccess: () -> Unit
+) {
+    NavHost(navController = navController, startDestination = if (isRegister) "register" else "login") {
+        composable("login") {
+            LoginScreen(
+                onRegisterClick = onRegisterClick,
+                onLoginSuccess = onLoginSuccess
+            )
+        }
+        composable("register") {
+            val viewModel = RegisterViewModel(AuthRepository(supabaseAuthApi))
+            RegisterScreen(viewModel = viewModel)
+        }
+        composable("home") {
+            HomeScreen(navController = navController)
+        }
+        composable("game1") { Game1Screen() }
+        composable("game2") { Game2Screen() }
     }
 }
 
